@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MindNotes - Умные заметки</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="app-container">
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <div class="logo">
+                    <i class="fas fa-brain"></i>
+                    <span>MindNotes</span>
+                </div>
+                <button class="theme-toggle">
+                    <i class="fas fa-moon"></i>
+                </button>
+            </div>
+            <nav class="sidebar-nav">
+                <ul>
+                    <li class="active">
+                        <a href="#" data-page="notes">
+                            <i class="fas fa-sticky-note"></i>
+                            <span>Заметки</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" data-page="favorites">
+                            <i class="fas fa-star"></i>
+                            <span>Избранное</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </aside>
+
+        <main class="main-content">
+            <header class="main-header">
+                <div class="search-container">
+                    <i class="fas fa-search"></i>
+                    <input type="text" class="search-input" placeholder="Поиск заметок...">
+                </div>
+                <button class="btn btn-primary" id="newNoteBtn">
+                    <i class="fas fa-plus"></i>
+                    <span>Новая заметка</span>
+                </button>
+            </header>
+
+            <div class="content-wrapper">
+                <!-- Главная страница -->
+                <section class="page-content" id="home-page">
+                    <div class="welcome-message">
+                        <h1>Добро пожаловать в MindNotes</h1>
+                        <p>Ваш персональный помощник для организации мыслей и идей</p>
+                    </div>
+                </section>
+
+                <!-- Основная страница с заметками -->
+                <section class="page-content" id="notes-page">
+                    <div class="page-header">
+                        <h2>Мои заметки</h2>
+                    </div>
+                    <div class="notes-grid">
+                        <!-- Заметки будут добавляться здесь динамически -->
+                    </div>
+                </section>
+
+                <!-- Страница избранного -->
+                <section class="page-content" id="favorites-page" style="display: none;">
+                    <div class="page-header">
+                        <h2>Избранное</h2>
+                        <div class="page-description">Ваши избранные заметки</div>
+                    </div>
+                    <div class="notes-grid">
+                        <!-- Избранные заметки будут добавляться здесь динамически -->
+                    </div>
+                </section>
+
+                <!-- Редактор заметок -->
+                <section class="note-editor" style="display: none;">
+                    <div class="editor-header">
+                        <input type="text" class="editor-title" placeholder="Заголовок заметки">
+                    </div>
+                    <div class="editor-content">
+                        <textarea class="editor-textarea" placeholder="Начните писать здесь..."></textarea>
+                    </div>
+                    <div class="editor-footer">
+                        <div class="editor-actions">
+                            <button class="btn btn-secondary" id="cancelNoteBtn">Отмена</button>
+                            <button class="btn btn-primary" id="saveNoteBtn">Сохранить</button>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </main>
+    </div>
+
+    <!-- Контекстное меню для заметок -->
+    <div class="context-menu" style="display: none;">
+        <div class="context-menu-item" data-action="edit">
+            <i class="fas fa-edit"></i>
+            <span>Редактировать</span>
+        </div>
+        <div class="context-menu-item" data-action="delete">
+            <i class="fas fa-trash"></i>
+            <span>Удалить</span>
+        </div>
+    </div>
+
+    <script src="js/main.js"></script>
+</body>
+</html> 
